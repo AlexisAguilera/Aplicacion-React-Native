@@ -6,17 +6,25 @@
         "estrellas": "4",
         "imagen": "http://www.hiltonhotels.com/assets/img/Hotel%20Images/Hilton/P/PTYHFHH/PTYHFHH_gallery_exterior01.jpg",
         "caracteristica": "solo habitación",
+        "icon": "bed",
+        "mealPicker": [{ "id": 0, "icon": "hotel", "label": "solo la habitación"},
+                       { "id": 1, "icon": "local-cafe", "label": "Desayuno" } 
+                      ],
         "precio": " 1971"
     },
 
     {
         "id": 1,
-        "nombre": "Hilton Miami Downtown",
-        "ubicacion": "6261 Collins Ave, Miami Beach, FL 33140, Estados Unidos",
-        "estrellas": "4",
-        "imagen": "http://www.hiltonhotels.com/assets/img/Hotel%20Images/Hilton/P/PTYHFHH/PTYHFHH_gallery_exterior01.jpg",
-        "caracteristica": "solo habitación",
-        "precio": " 1971"
+        "nombre": "Sheraton Miami Airport Hotel & Executive Meeting Center",
+        "ubicacion": "3900 NW 21st Street, Miami, FL 33142, EE. UU.",
+        "estrellas": "3",
+        "imagen": "https://s-ec.bstatic.com/images/hotel/max1024x768/901/90178104.jpg",
+        "caracteristica": "desayuno",
+        "icon": "cafe",
+        "mealPicker": [{ "id": 0, "icon": "hotel", "label": "solo la habitación"},
+                       { "id": 1, "icon": "local-cafe", "label": "Desayuno" } 
+                      ],
+        "precio": " 1878"
     },
 
     {
@@ -26,6 +34,10 @@
         "estrellas": "4",
         "imagen": "http://www.hiltonhotels.com/assets/img/Hotel%20Images/Hilton/P/PTYHFHH/PTYHFHH_gallery_exterior01.jpg",
         "caracteristica": "solo habitación",
+        "icon": "bed",
+        "mealPicker": [{ "id": 0, "icon": "hotel", "label": "solo la habitación"},
+                      { "id": 1, "icon": "local-cafe", "label": "Desayuno" } 
+                      ],
         "precio": " 1971"
     },
 
@@ -36,6 +48,10 @@
         "estrellas": "4",
         "imagen": "http://www.hiltonhotels.com/assets/img/Hotel%20Images/Hilton/P/PTYHFHH/PTYHFHH_gallery_exterior01.jpg",
         "caracteristica": "solo habitación",
+        "icon": "bed",
+        "mealPicker": [{ "id": 0, "icon": "hotel", "label": "solo la habitación"},
+                        { "id": 1, "icon": "local-cafe", "label": "Desayuno" } 
+                      ],
         "precio": " 1971"
     },
 
@@ -46,6 +62,10 @@
         "estrellas": "4",
         "imagen": "http://www.hiltonhotels.com/assets/img/Hotel%20Images/Hilton/P/PTYHFHH/PTYHFHH_gallery_exterior01.jpg",
         "caracteristica": "solo habitación",
+        "icon": "bed",
+        "mealPicker": [{ "id": 0, "icon": "hotel", "label": "solo la habitación"},
+                      { "id": 1, "icon": "local-cafe", "label": "Desayuno" } 
+                      ],
         "precio": " 1971"
     }
 ]

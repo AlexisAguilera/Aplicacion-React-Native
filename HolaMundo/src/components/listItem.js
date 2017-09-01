@@ -2,13 +2,35 @@ import React, { Component } from 'react';
 import { Text, Image, View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import IconTwo from 'react-native-vector-icons/Ionicons';
 import CardSection from './cardSection';
 import Card from './card';
+import Stars from './stars';
 import * as actions from '../actions';
 
 class ListItem extends Component {
+    renderIcon() {
+        if (this.props.hotel.icon === 'bed') {
+                return (
+                    <View style={{ flexDirection: 'row' }}>
+                        <Icon name="bed" size={18} color='gray' />
+                        <Text style={{ marginLeft: 5 }}>{this.props.hotel.caracteristica}</Text>
+                    </View>
+                );
+        }
+        if (this.props.hotel.icon === 'cafe') {
+                return (
+                    <View style={{ flexDirection: 'row' }}>
+                        <IconTwo name="md-cafe" size={18} color='gray' />
+                        <Text style={{ marginLeft: 5 }}>{this.props.hotel.caracteristica}</Text>
+                    </View>
+                ); 
+        }   
+    }
+
     render() {
-        const { imagen, nombre, estrellas, caracteristica } = this.props.hotel;
+        const { imagen, nombre, estrellas } = this.props.hotel;
         return (
                 <Card>
                     <TouchableOpacity
@@ -30,8 +52,8 @@ class ListItem extends Component {
                     <CardSection>
                         <View style={styles.viewStyleContent} >
                                 <View style={styles.viewStyleFirts} >
-                                    <Text>{estrellas} estrellas</Text>
-                                    <Text>{caracteristica}</Text>
+                                    <Stars numberStars={estrellas} Color='#FFD700' size={20} />
+                                    {this.renderIcon()}
                                 </View> 
                                 <View style={styles.viewStyleSecond}>
                                     <Text>precio por noche</Text>
