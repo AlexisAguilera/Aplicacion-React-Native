@@ -348,7 +348,8 @@ class HotelDetail extends Component {
                             </Text>
                             <Text
                             style={{
-                                marginTop: -20
+                                marginTop: -20,
+								fontSize: 13
                             }}
                             >
                                 Las condiciones de cancelación y de pago por
@@ -361,7 +362,8 @@ class HotelDetail extends Component {
                             </Text>
                             <Text
                             style={{
-                                marginTop: -20
+                                marginTop: -20,
+								fontSize: 13
                             }}
                             >
                                 Los siguientes cargos y depositos se pagan
@@ -383,7 +385,8 @@ class HotelDetail extends Component {
                             </Text>
                             <Text
                             style={{
-                                marginTop: -20
+                                marginTop: -20,
+								fontSize: 13
                             }}
                             >
                                 Los siguientes cargo se pagan en el hotel
