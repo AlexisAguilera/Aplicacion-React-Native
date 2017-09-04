@@ -38,7 +38,6 @@ const Stars = (props) => {
 
             );
         case '4':
-            { console.log('entre');
             return (
             <View style={{ flexDirection: 'row' }}>
                 <Icon name="star" size={props.size} color={props.Color} />
@@ -48,7 +47,6 @@ const Stars = (props) => {
                 <Icon name="star" size={props.size} color='white' />
              </View>
             );
-        }
         case '5':
             return (
                 <View style={{ flexDirection: 'row' }}>

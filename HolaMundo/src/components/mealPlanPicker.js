@@ -2,35 +2,90 @@ import React, { Component } from 'react';
 import { View, TouchableWithoutFeedback, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-let select;
-let state;
-let arrow;
-
 class MealPlanPicker extends Component {
+
     constructor() {
         super();
-        select = 0; //seteo en serio arbitrariamente
-        state = 'cerrado';
-        arrow = 'keyboard-arrow-down';
+        this.state = { viewOne: true, select: 0 };
     }
-    selectionPressed() {
-        console.log('entré');
-        if (state === 'cerrado') {
-            state = 'abierto';
-            arrow = 'check';
-        } else {
-            state = 'cerrado';
-            arrow = 'keyboard-arrow-down';
+    changeView(id) {
+        this.setState({
+          viewOne: !this.state.viewOne,
+          select: id
+        });
+    }
+
+    renderCondition(value) {
+        if (value.id !== this.state.select) {
+            return (
+                <TouchableWithoutFeedback onPress={() => this.changeView(value.id)} key={value.id}>
+                <View  
+                style={{               
+                    flexDirection: 'row',
+                    justifyContent: 'flex-start',
+                    width: 300,
+                    alignContent: 'center',
+                    height: 30,
+                    borderBottomColor: '#ddd',
+                    borderBottomWidth: 1
+                }}
+                >
+                        <Icon name={value.icon} size={24} color='gray' />
+                        <Text style={{ marginLeft: 10 }}>{value.label}</Text>
+                    </View>
+            </TouchableWithoutFeedback>);
         }
     }
-    renderPicker() {
-        if (state === 'cerrado') {
-            return;
-        }
+
+    renderNewView() {
+       const toRet = this.props.children.map((value) =>
+            this.renderCondition(value)
+        );
+
+        return toRet;
     }
 
     render() {
-        console.log(select);
+       const id = this.state.select;
+       console.log(id);
+        if (!this.state.viewOne) { 
+            return (
+                <View style={styles.desplegableStyle} >
+                    <View 
+                    style={{               
+                        flexDirection: 'column',
+                        justifyContent: 'flex-start',
+                        width: 320
+                    }}
+                    >
+                        <TouchableWithoutFeedback 
+                            onPress={() => this.changeView(id)}
+                        >
+                            <View style={styles.desplegableStyle}>
+                                <View  
+                                style={{               
+                                    flexDirection: 'row',
+                                    justifyContent: 'flex-start',
+                                    alignContent: 'center',
+                                    width: 300,
+                                    height: 30,
+                                    borderBottomColor: '#ddd',
+                                    borderBottomWidth: 1
+                                }}
+                                >
+                                    <Icon name={this.props.children[id].icon} size={24} color='gray' />
+                                    <Text style={{ marginLeft: 10 }}>{this.props.children[id].label}</Text>
+                                </View>
+                                <View style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
+                                    <Icon name="check" size={20} color='red' />
+                                </View>
+                            </View> 
+                        </TouchableWithoutFeedback>
+                        {this.renderNewView()}
+                    </View>
+                </View>
+            );     
+        }
         return (
             <View>
                 <View style={styles.desplegableStyle} >
@@ -38,17 +93,18 @@ class MealPlanPicker extends Component {
                     style={{               
                         flexDirection: 'row',
                         justifyContent: 'flex-start',
-                        width: 300
+                        width: 300,
+                        height: 30
                     }}
                     >
-                        <Icon name={this.props.children[select].icon} size={24} color='gray' />
-                        <Text style={{ marginLeft: 10 }}>{this.props.children[select].label}</Text>
-                    </View>
-                    <TouchableWithoutFeedback onPress={() => this.selectionPressed()}>
-                        <View style={{ justifyContent: 'flex-end' }}>
-                            <Icon name={arrow} size={20} color='red' />
-                        </View> 
-                    </TouchableWithoutFeedback>
+                        <Icon name={this.props.children[id].icon} size={24} color='gray' />
+                        <Text style={{ marginLeft: 10 }}>{this.props.children[id].label}</Text>
+                        </View>
+                        <TouchableWithoutFeedback onPress={() => this.changeView(id)}>
+                            <View style={{ justifyContent: 'flex-end' }}>
+                                <Icon name="keyboard-arrow-down" size={20} color='red' />
+                            </View> 
+                        </TouchableWithoutFeedback>
                 </View>
             </View>
         );

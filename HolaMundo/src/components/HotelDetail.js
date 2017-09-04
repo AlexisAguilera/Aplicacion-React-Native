@@ -161,7 +161,8 @@ class HotelDetail extends Component {
                             style={{ 
                                 flex: 0.6, 
                                 opacity: 0.8, 
-                                fontSize: 15, 
+                                fontSize: 16,
+                                color: 'black'
                             }}
                             >
                                 Habitaciones
@@ -277,6 +278,119 @@ class HotelDetail extends Component {
                             </Text>
                         </View>            
                     </View>
+
+                    <View style={styles.SectionStyle}>
+                        <View 
+                        styyle={{ 
+                            height: 48
+                        }}
+                        >
+                            <Text
+                            style={{
+                                marginLeft: 10,
+                                marginRight: 10,
+                                justifyContent: 'flex-start',
+                                borderBottomColor: '#ddd',
+                                borderBottomWidth: 1,
+                                width: 320,
+                                opacity: 0.8, 
+                                fontSize: 16,
+                                color: 'black'
+                            }}
+                            >Descripción</Text>
+                        </View>
+                        <View style={styles.TextDescriptionStyle}>
+                            <IconTwo name="watch-later"size={24} color='gray' />
+                            <View
+                            style={{
+                                marginLeft: 15,
+                                marginRight: 15
+                            }}
+                            >
+                                <Text>Entrada: A partir de las 15:00 hs</Text>
+                                <Text>Salida: Hasta las 12:00 </Text>
+                            </View>
+                        </View>
+                        <View 
+                        style={{
+                            marginLeft: 10,
+                            marginRight: 10,
+                            height: 90,
+                            alignItems: 'flex-start'
+                        }}
+                        >
+                            <Text
+                            style={{
+                                fontFamily: 'Roboto Medium',
+                                fontSize: 16,
+                                color: 'blue',
+                                opacity: 0.8,
+                                marginTop: 10
+                            }}
+                            >Ubicación del establecimiento</Text>
+                                <Text
+                                style={{
+                                    marginTop: 5,
+                                    width: 300,
+                                    fontSize: 13
+                                }}
+                                >
+                                    En Miami Beach (Mid Beach), Hilton Cabana 
+                                    Miami Beach te permite llegar comodamente a...
+                                </Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.SectionStyle}>
+                        <View style={styles.LastSectionStyle}>
+                            <Text style={styles.TextLastSectionStyle}>
+                                Cancelación/Prepago
+                            </Text>
+                            <Text
+                            style={{
+                                marginTop: -20
+                            }}
+                            >
+                                Las condiciones de cancelación y de pago por
+                                adelantado pueden variar según el tipo de...
+                            </Text>
+                        </View>
+                        <View style={styles.LastSectionStyle}>
+                            <Text style={styles.TextLastSectionStyle}>
+                                Servicios opcionales de habitación
+                            </Text>
+                            <Text
+                            style={{
+                                marginTop: -20
+                            }}
+                            >
+                                Los siguientes cargos y depositos se pagan
+                                en el hotel al recibir el servicio...
+                            </Text>
+                        </View>
+                        <View 
+                        style={{
+                            marginLeft: 10,
+                            marginRight: 10,
+                            height: 72,
+                            justifyContent: 'space-around',
+                            borderBottomColor: '#ddd',
+                            borderBottomWidth: 1,
+                        }}
+                        >
+                            <Text style={styles.TextLastSectionStyle}>
+                                Servicios incluídos en la reserva
+                            </Text>
+                            <Text
+                            style={{
+                                marginTop: -20
+                            }}
+                            >
+                                Los siguientes cargo se pagan en el hotel
+                            </Text>
+                        </View>
+                    </View>
+                   
                 </ScrollView>
 
         );
@@ -359,9 +473,10 @@ const styles = {
         alignItems: 'center',
         flexDirection: 'row',
         height: 50,
-        top: -10
+        top: -4
     },
     roomSectionStyle: {
+        marginTop: 16,
         backgroundColor: '#FFFFFF',
         opacity: 1,
         borderRadius: 3,
@@ -373,14 +488,13 @@ const styles = {
         marginRight: 5,
     },
     roomSectionDescriptionStyle: {
-        paddingTop: 10,
+        marginTop: 16,
         justifyContent: 'flex-start',
         marginLeft: 10,
         marginRight: 10
 
     },
     roomSectionCapacity: {
-         height: 30,
         borderBottomColor: '#ddd',
         borderBottomWidth: 1,
         alignItems: 'center',
@@ -404,7 +518,44 @@ const styles = {
         marginRight: 5,
         alignItems: 'center',
         justifyContent: 'space-around',
-        height: 48
+        height: 40
+    },
+    SectionStyle: {
+        backgroundColor: '#FFFFFF',
+        opacity: 1,
+        borderRadius: 3,
+        borderBottomWidth: 1,
+        shadowColor: '#000000',
+        shadowOpacity: 0.32,
+        alignItems: 'flex-start',
+        marginTop: 16,
+        marginLeft: 5,
+        marginRight: 5,
+    },
+    TextDescriptionStyle: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderBottomColor: '#ddd',
+        borderBottomWidth: 1,
+        width: 320,
+        marginRight: 10,
+        marginLeft: 10,
+        height: 72
+    },
+    LastSectionStyle: {
+        marginLeft: 10,
+        marginRight: 10,
+        height: 88,
+        justifyContent: 'space-around',
+        borderBottomColor: '#ddd',
+        borderBottomWidth: 1,
+    },
+    TextLastSectionStyle: {
+        justifyContent: 'flex-start',
+        width: 320,
+        opacity: 0.8, 
+        fontSize: 16,
+        color: 'black'
     }
 };
 
