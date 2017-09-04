@@ -363,7 +363,8 @@ class HotelDetail extends Component {
                             <Text
                             style={{
                                 marginTop: -20,
-								fontSize: 13
+								fontSize: 13,
+								marginRight: 15
                             }}
                             >
                                 Los siguientes cargos y depositos se pagan
